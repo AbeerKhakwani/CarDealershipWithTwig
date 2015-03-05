@@ -8,7 +8,7 @@ class Car
     function worthBuying($max_price, $max_mileage) {
         return $this->price < $max_price && $this->miles < $max_mileage;
     }
-    function __construct($type_car, $value_car, $miles_car, $image_car) {
+    function __construct($type_car, $value_car, $miles_car, $image_car="image") {
         $this->make_model = $type_car;
         $this->price = $value_car;
         $this->miles = $miles_car;
@@ -21,7 +21,7 @@ class Car
          }
     }
     function setMiles($new_miles){
-        $string_miles = (float) $new_miles;
+        $float_miles = (float) $new_miles;
         if ($float_miles != 0) {
             $this->miles = $float_miles;
         }
@@ -32,6 +32,13 @@ class Car
             $this->price = $float_price;
          }
     }
+     function setImage($new_image){
+         $string_image = (string) $new_image;
+         if ($string_image != 0){
+             $this->image = $string_image;
+         }
+     }
+
     function getMake_model(){
         return $this->make_model;
     }
@@ -40,5 +47,17 @@ class Car
     }
     function getPrice()    {
         return $this->price;
+    }
+    function getImage(){
+        return $this->image;
+    }
+
+    function save() {
+        array_push($_SESSION['add_cars'], $this);
+    }
+
+
+ static function getAll() {
+        return $_SESSION['add_cars'];
     }
 }
