@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Success</title>
+        <title>Successfully added</title>
     </head>
     <body>
         <h1>You have added this car!</h1>
@@ -11,6 +11,6 @@
             <li>{{addedcar.getMiles}}</li>
 
         </ul>
-        <p><a href='/'>Go back home.Veiw all the cars listed</a></p>
+        <a href='/'>Go back home. View all cars.</a>
     </body>
 </html>
