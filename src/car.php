@@ -57,7 +57,11 @@ class Car
     }
 
 
- static function getAll() {
+    static function getAll() {
         return $_SESSION['add_cars'];
+    }
+
+    static function deleteAll() {
+        $_SESSION['add_cars'] = array();
     }
 }

@@ -26,6 +26,9 @@
             <button type="submit">Submit</button>
 
         </form>
+        <form id="form_id" action="/delete" method="post">
+            <button type="submit">Clear List</button>
+        </form>
 
 
         {% for car in cars %}

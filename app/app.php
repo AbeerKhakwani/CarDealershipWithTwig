@@ -27,6 +27,12 @@
 
     });
 
+    $app->post("/delete", function() use ($app){
+
+            return $app['twig']->render('/delete.php', array('delete'=>Car::deleteAll()));
+
+    });
+
   return $app;
 
 ?>
