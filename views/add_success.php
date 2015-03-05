@@ -11,6 +11,6 @@
             <li>{{addedcar.getMiles}}</li>
 
         </ul>
-        <p><a href='/'>View your list of things to do.</a></p>
+        <p><a href='/'>Go back home.Veiw all the cars listed</a></p>
     </body>
 </html>

@@ -5,15 +5,21 @@ class Car
     private $price;
     private $miles;
     public $image;
-    function worthBuying($max_price, $max_mileage) {
-        return $this->price < $max_price && $this->miles < $max_mileage;
-    }
+
     function __construct($type_car, $value_car, $miles_car, $image_car="image") {
         $this->make_model = $type_car;
         $this->price = $value_car;
         $this->miles = $miles_car;
         $this->image = $image_car;
     }
+
+
+
+    function worthBuying($max_price, $max_mileage) {
+        return $this->price < $max_price && $this->miles < $max_mileage;
+    }
+
+
     function setMake_model($new_make){
         $string_model = (string) $new_make;
          if ($string_model != 0) {

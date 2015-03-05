@@ -33,6 +33,33 @@
 
     });
 
+    $app->get("/search", function() use ($app){
+
+
+
+        return $app['twig']->render('search.php');
+
+        });
+
+    $app->get("/search_display", function() use($app){
+        $cars_matching_search = array();
+        $all_cars=Car::getAll();
+
+
+        foreach($all_cars as $car)
+        {
+            if($car->worthBuying( $_GET['max_price'],$_GET['max_mile']))
+            {
+             array_push($cars_matching_search, $car);
+            }
+        }
+
+        return $app['twig']->render('search_display.php', array('cars_matching'=>$cars_matching_search ));
+
+    });
+
+
+
   return $app;
 
 ?>

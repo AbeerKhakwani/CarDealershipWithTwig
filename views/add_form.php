@@ -6,6 +6,7 @@
     </head>
     <body>
         <div class="container">
+        <h1>Your Car Dealership</h1>
         <form id="form_id" action="/add" method="post">
             <div class='form-group'>
             <label for="model">Enter Make and Model</label>
@@ -30,6 +31,8 @@
             <button type="submit">Clear List</button>
         </form>
 
+        <a href="/search">Search cars</a>
+
 
         {% for car in cars %}
         <h2>{{car.Make_model}}</h2>
@@ -39,6 +42,8 @@
             <li>{{car.miles}}</li>
         </ul>
         {% endfor %}
+
+
 
 </div>
     </body>
