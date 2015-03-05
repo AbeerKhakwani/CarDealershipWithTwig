@@ -45,14 +45,25 @@
         $cars_matching_search = array();
         $all_cars=Car::getAll();
 
+        $maxCar=array($_GET['max_price'], $_GET['max_mile']);
+
+    if (empty($_GET['max_price']) || empty($_GET['max_mile'])){
+
+        return $app['twig']->render('error.php');
+    }
+    else {
 
         foreach($all_cars as $car)
         {
-            if($car->worthBuying( $_GET['max_price'],$_GET['max_mile']))
+            if($car->worthBuying($_GET['max_price'], $_GET['max_mile']))
             {
              array_push($cars_matching_search, $car);
             }
         }
+
+
+
+    }
 
         return $app['twig']->render('search_display.php', array('cars_matching'=>$cars_matching_search ));
 
